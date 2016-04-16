@@ -66,7 +66,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```
 
 ```rb
-
+@author = Author.create(name: params[:name])
 ```
 ## Express
 
@@ -75,7 +75,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 How does module.exports help us with separation of concerns?
 
 ```text
-
+module.exports assists in adding all related functions into a single file that can accessed throughout the application.
 ```
 
 ### Question #6
@@ -87,13 +87,24 @@ Then, make each route respond with a one-word string containing the RESTful acti
 ```js
 var express = require("express");
 var app = express();
-
-// Your code starts here...
-
 ```
 
 ```js
-// Your answer...
+app.get("/", function(req,res){
+  res.send("index")
+});
+
+app.post("/", function(req,res){
+  res.send("create")
+});
+
+app.put("/:id", function(req,res){
+  res.send("update")
+});
+
+app.delete("/:id", function(req,res){
+  res.send("destroy")
+});
 ```
 ### Question #7
 
