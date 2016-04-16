@@ -40,7 +40,12 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+var Instructor = mongoose.model('Instructor', schema);
+
+Instructor.findOne({"name": Andy}, function (err, andy) {
+  console.log(andy);
+  andy.wishlist_items.create({"description": "Resin Laying Deer Figurine, Gold")
+}});
 ```
 
 ### Question #4
@@ -102,6 +107,6 @@ Describe the differences between Express and Rails as backend frameworks.
 
 What is the importance of using body-parser in our express application for post requests?
 
-```js
-
+```text
+Body-parser helps to process user-input received from a form.
 ```
