@@ -100,7 +100,9 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
+Express is written in Javascript so individuals who are familiar with Javascript may find it easier to work with. Express is also considered an unopinionated framework so there's no "right way".
 
+Rails is a powerful framework that comes with a lot of out-of-the box functionality. The Rails community has "Convention over Configuration" mindset which embodies a "right way" of doing things to make the users life easier.
 ```
 
 ### Question #8
