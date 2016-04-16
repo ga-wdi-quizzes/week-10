@@ -20,8 +20,14 @@ var results = AuthorModel.find({name: "Bob"});
 console.log(results);
 ```
 
+```text
+The example provided needs to have a callback function so that the results of the query can be passed into the response.
+```
 ```js
-// Your answer...
+var results = AuthorModel.find({name: "Bob"}, function(err,data){
+  console.log(data);
+});
+
 ```
 
 ### Question #3
