@@ -7,7 +7,11 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
+SQL databases are relational while NoSQL databases aren't. SQL databases use tables while NoSQL databases use documents, key-value pairs and graphs (This means it doesn't have to adhere to a schema).
+
+SQL databases are vertically scalable while NoSql is horizontal.
+
+If you have a lot of data its better to use NoSQL, because the query time for SQL is really long
 
 ```
 
@@ -22,7 +26,11 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+//Mongoose operations require callbacks since they're asynchronous
+
+var results= AuthorModel.find({name: "Bob"}, function(results){
+  console.log(results);
+})
 ```
 
 ### Question #3
@@ -35,7 +43,10 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+Instructor.findOne({name: "Andy"}).then(function(instructor){
+  instructor.whishlist_items.push({description:"Resin Laying Deer Figurine, Gold"});
+  andy.save();
+})
 ```
 
 ### Question #4
@@ -56,6 +67,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```
 
 ```rb
+@author = Author.create!(name: params[:name])
 
 ```
 ## Express
@@ -66,6 +78,7 @@ How does module.exports help us with separation of concerns?
 
 ```text
 
+A module takes a bunch related functions and saves it into a package of code that can be used in another file. This helps a lot with separations of concerns because you can create long functions in one file, export them with modules, and then require them in another file.
 ```
 
 ### Question #6
@@ -78,25 +91,42 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/", function(req, res){
+  res.send("index");
+});
+
+app.post("/", function(req, res){
+  res.send("create");
+});
+app.post("/:id", function(req, res){
+  res.send("update");
+});
+
+app.delete("/:id", function(req, res){
+  res.send('delete');
+});
+
 
 ```
 
-```js
-// Your answer...
-```
+
 ### Question #7
 
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+Rails used Active Record to give it CRUD functionality and PostgreSQL for creating relational databases. Express on the other hand uses Mongoose for CRUD functionality and MongoDB (non-relational database).
 ```
 
 ### Question #8
 
-What is the importance of using body-parser in our express application for post requests? Then, please provide an example of an Express App POST request: 
+What is the importance of using body-parser in our express application for post requests? Then, please provide an example of an Express App POST request:
 
 ```js
+
+// body-parser extracts the necessary data from incoming requests such as forms.
+app.post("/person"), function(req, res){
+  res.json(req.body);
+});
 
 ```
