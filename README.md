@@ -9,6 +9,19 @@ Describe the differences between a SQL and NoSQL DB, and when you might use each
 ```text
 Your answer...
 
+SQL db:
+- Relational database
+- Uses foreign keys to join tables
+- Rigid schema
+- Queries(performance) can get expensive
+
+NoSQL db:
+- Non-relational database
+- Document database
+- High performance
+- High availability
+- Automatic scaling
+
 ```
 
 ### Question #2
@@ -95,7 +108,7 @@ Describe the differences between Express and Rails as backend frameworks.
 
 ### Question #8
 
-What is the importance of using body-parser in our express application for post requests? 
+What is the importance of using body-parser in our express application for post requests?
 
 ```js
 
