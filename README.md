@@ -78,6 +78,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```
 
 ```rb
+@author = Author.create!(name: params[:name])
 
 ```
 ## Express
@@ -87,6 +88,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 How does module.exports help us with separation of concerns?
 
 ```text
+In separation of concerns, we want to split the code up into portions each focused around one task/thing. module.exports helps us with this by encapsulating the portions that can then be called from other files.
 
 ```
 
