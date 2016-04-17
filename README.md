@@ -14,6 +14,7 @@ SQL db:
 - Uses foreign keys to join tables
 - Rigid schema
 - Queries(performance) can get expensive
+- For use in complex relationship databases
 
 NoSQL db:
 - Non-relational database
@@ -21,6 +22,7 @@ NoSQL db:
 - High performance
 - High availability
 - Automatic scaling
+- For use in databases with less complex associations or
 
 ```
 
@@ -35,7 +37,10 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+//The find method requires a callback function to know what to do with the results it finds.
+var results = AuthorModel.find({name: "Bob"}, function(results){
+  console.log(results);
+});
 ```
 
 ### Question #3
@@ -49,6 +54,10 @@ Convert the following ActiveRecord sequence to Mongoose:
 
 ```js
 // Your answer...
+Instructor.findOne({name: "Andy"}, function(err, andy){
+  andy.wishlist_items.push({description: "Resing Laying Deer Figurine, Gold"});
+  andy.save();
+})
 ```
 
 ### Question #4
