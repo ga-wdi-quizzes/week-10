@@ -7,7 +7,8 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
+SQL is a database that is called as Relational Database.
+NoSQL is a database that is non-relational.
 
 ```
 
@@ -22,7 +23,8 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+
+the code does not have a call back.
 ```
 
 ### Question #3
@@ -35,7 +37,10 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+Instructor.find({name:Andy,function(err, andy){
+  andy.wishlist_items({description:"resin Laying Deer figurine, Gold"});
+  andy.save();
+})
 ```
 
 ### Question #4
@@ -56,7 +61,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```
 
 ```rb
-
+@author = Author.create!(name:params[:name])
 ```
 ## Express
 
@@ -65,7 +70,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 How does module.exports help us with separation of concerns?
 
 ```text
-
+Module.exports by returning an object as a result of a require call which cause each function to do one thing at a time.
 ```
 
 ### Question #6
@@ -83,20 +88,29 @@ var app = express();
 ```
 
 ```js
-// Your answer...
+app.get(req, res){
+  respond.send("index")});
+app.put(req, res){
+  respond.send("create")});
+app.post(req, res){
+  respond.send("update")});
+app.delete(req, res){
+  respond.send("delete")});
 ```
 ### Question #7
 
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
+Express backend works with Javascript. Express is the backend part of the MEAN stack. There aren't any files that exist within the file.
+Rails backend works with Ruby. Rails backend  have files made but aren't utilize until it created through the command line.
 
 ```
 
 ### Question #8
 
-What is the importance of using body-parser in our express application for post requests? 
+What is the importance of using body-parser in our express application for post requests?
 
 ```js
-
+Body-parser extracts the entire body portion of a request and exposes it on req.body.
 ```
