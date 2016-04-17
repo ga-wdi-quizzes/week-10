@@ -103,6 +103,22 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
+app.get("/", function(req, res){
+  res.send("Read");
+});
+
+app.post("/", function(req, res){
+  res.send("Create");
+});
+
+app.put("/:id", function(req, res){
+  res.send("Update");
+});
+
+app.delete("/:id", function(req, res){
+  res.send("Delete");
+});
+
 
 ```
 
@@ -114,6 +130,9 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
+Rails provides much of the structure for your website. There are established conventions that must be followed for everything to work properly, such as using the correct path conventions.
+
+Express provides the tools to build your own structure. For example, you choose your own path names. This makes the program much more lightweight, as most of the files are the ones you've created/defined.
 
 ```
 
@@ -121,6 +140,7 @@ Describe the differences between Express and Rails as backend frameworks.
 
 What is the importance of using body-parser in our express application for post requests?
 
-```js
+```text
+Because express is a lightweight framework, it doesn't know how to process user input received through a form and make a POST request with it. Including body-parser adds that functionality to express apps. You could argue that express should come with this library from the start, but it would be extra bloat for those who would never use it. 
 
 ```
