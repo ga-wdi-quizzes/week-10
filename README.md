@@ -6,10 +6,7 @@
 
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
-```text
-Your answer...
-
-```
+SQL databases are relational databases, whereas NoSQL databases aren't necessarily so. SQL databases contain tables whereas NoSQL databases contain documents.
 
 ### Question #2
 
@@ -22,7 +19,10 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+This Mongoose code requires a callback function.
+var results = AuthorModel.find{{name: "Bob"}}, function(results){
+  console.log(results);
+}
 ```
 
 ### Question #3
@@ -95,7 +95,7 @@ Describe the differences between Express and Rails as backend frameworks.
 
 ### Question #8
 
-What is the importance of using body-parser in our express application for post requests? 
+What is the importance of using body-parser in our express application for post requests?
 
 ```js
 
