@@ -6,9 +6,10 @@
 
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
-```text
-Your answer...
-
+```
+SQL is a relational database with a grid system that abstracts infor into a table
+of rows and columns.  NoSQL databases are non relational and mixing and undoing
+changes are more easily done. NoSQL databases are good for scaling and high performance.
 ```
 
 ### Question #2
@@ -34,8 +35,13 @@ Convert the following ActiveRecord sequence to Mongoose:
 @andy.wishlist_items.create(description: "Resin Laying Deer Figurine, Gold")
 ```
 
-```js
-// Your answer...
+```
+var andy = new Instructor({name: 'Andy'});
+andy.wishlist_items.push({'description': 'Resin Layering Deer Figurine, Gold'});
+vandy.save(function(err, res){
+  err ? console.log(err) : console.log('andy was saved');
+}
+
 ```
 
 ### Question #4
@@ -55,7 +61,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 }
 ```
 
-```rb
+```
 
 ```
 ## Express
@@ -64,8 +70,9 @@ Convert the following create method in Mongoose to ActiveRecord.
 
 How does module.exports help us with separation of concerns?
 
-```text
-
+```
+It allows for code from one script file to be used in another.  So, you can
+organize your code in separate files.
 ```
 
 ### Question #6
@@ -89,14 +96,15 @@ var app = express();
 
 Describe the differences between Express and Rails as backend frameworks.
 
-```text
-
+```
+Express is minimal.  You get to put together an app piece by piece.  Rails give
+you the entire app organization in a directory right away.
 ```
 
 ### Question #8
 
-What is the importance of using body-parser in our express application for post requests? 
+What is the importance of using body-parser in our express application for post requests?
 
-```js
-
+```
+body-parser is middleware that parses data from html forms so you're app can use it.
 ```
