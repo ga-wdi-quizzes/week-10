@@ -8,7 +8,7 @@ Describe the differences between a SQL and NoSQL DB, and when you might use each
 
 ```text
 Your answer...
-
+SQL databases are better when dealing with relational data and are more rigid in the designation of their schemas, they require items to have the same attributes and are laid out in rows and columns similar to a spreadsheet - NoSQL DBs allow for objects, called "documents" to be inserted into the database and these object can have different key value pairs. 
 ```
 
 ### Question #2
@@ -95,7 +95,7 @@ Describe the differences between Express and Rails as backend frameworks.
 
 ### Question #8
 
-What is the importance of using body-parser in our express application for post requests? 
+What is the importance of using body-parser in our express application for post requests?
 
 ```js
 
