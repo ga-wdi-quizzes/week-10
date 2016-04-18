@@ -7,7 +7,11 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
+SQL is a relational database that has a fixed schema for each table.  NoSQL stores data in objects that are collections, but each document doesn't have to have the same schema.
+
+A good scenario for a NoSQL db would be when you have multiple models and their might be some ambiguity with the relationship(s) between them all, so a more flexible approach will be easier to work with.  Such as an HR database where you have managers and employees since some employees have multiple managers and managers have managers.
+
+SQL databases are good well you have well defined relationships between models and there won't be much amongst the tables.  A post and comments app would be a good scenario to use a relational db.
 
 ```
 
@@ -22,7 +26,13 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+
+var Author = mongoose.model("Author");
+
+var bob = Authur.find({name: "Bob"});
+
+console.log(bob)
+
 ```
 
 ### Question #3
@@ -35,7 +45,11 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+
+var andy = Instructor.find({name: "Andy"})
+
+
+
 ```
 
 ### Question #4
@@ -57,6 +71,8 @@ Convert the following create method in Mongoose to ActiveRecord.
 
 ```rb
 
+
+
 ```
 ## Express
 
@@ -65,6 +81,8 @@ Convert the following create method in Mongoose to ActiveRecord.
 How does module.exports help us with separation of concerns?
 
 ```text
+
+  module.exports only lets 
 
 ```
 
@@ -95,7 +113,7 @@ Describe the differences between Express and Rails as backend frameworks.
 
 ### Question #8
 
-What is the importance of using body-parser in our express application for post requests? Then, please provide an example of an Express App POST request: 
+What is the importance of using body-parser in our express application for post requests? Then, please provide an example of an Express App POST request:
 
 ```js
 
