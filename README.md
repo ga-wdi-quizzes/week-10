@@ -7,8 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
-
+SQL DBs are table based databases that represent data in form of tables and require a predefined schema whereas NonSQL DBs are document based represented as collections of key-value pairs, documents, etc. with a dynamic schema of unstructured data.
 ```
 
 ### Question #2
@@ -22,7 +21,8 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+var result = AuthorModel.findOne({name: "Bob"});
+console.log(result);
 ```
 
 ### Question #3
@@ -35,8 +35,9 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
-```
+Instructor.findOne({name: "Andy"}) {
+  andy.wishlist_items.push({description: "Resin Laying Deer Figurine, Gold"});
+}```
 
 ### Question #4
 
@@ -56,7 +57,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```
 
 ```rb
-
+@author = Author.create(name: params[:name])
 ```
 ## Express
 
@@ -65,7 +66,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 How does module.exports help us with separation of concerns?
 
 ```text
-
+A module encapsulates related code into a single unit of code. When creating a module, we can interpret this as moving all related functions into a file.
 ```
 
 ### Question #6
@@ -83,19 +84,29 @@ var app = express();
 ```
 
 ```js
-// Your answer...
-```
+app.get("/", function(req, res){
+  response.send("show");
+});
+app.post("/", function(req, res){
+  response.send("create");
+});
+app.put("/:id", function(req, res){
+  response.send("update");
+});
+app.delete("/:id", function(req, res){
+  response.send("delete");
+});```
 ### Question #7
 
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+The Rails framework is very organized and rigid in its rules and format the developer should follow. Express is much more forgiving and gives a lot of creative freedom to the developer.
 ```
 
 ### Question #8
 
-What is the importance of using body-parser in our express application for post requests? 
+What is the importance of using body-parser in our express application for post requests?
 
 ```js
 
