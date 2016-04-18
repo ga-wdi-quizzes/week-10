@@ -99,18 +99,53 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+// Read
+app.get("/candidates", function(req, res){
+  //.find all candidates then
+  //render to candidates index
+  //use handle bars so it can be used in view
+});
+app.get("/candidates/:name", function(req, res){
 
+});
+
+//Create
+app.post("/candidates", fucntion(req, res){
+  Candidate.create(req.body.candidate).then(function(candidate){
+    //redirect
+  })
+})
+
+//Update
+app.post("/candidates/:name", funciton(req, res){
+  Candidate.findOneAndUpdate(
+    //use body-parser and redirect.
+  )
+})
+
+//Delete/Detroy
+app.post("/candidates/:name/delete", function(req, res){
+  Candidate.findOneAndRemove(
+    //use body-parser and redirect
+  )
+})
 ```
 
 ```js
 // Your answer...
+GET
+POST
+PATCH
+DELETE
 ```
 ### Question #7
 
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
+Express is an MVC framework written in Javascript. It runs on top of Node. Express uses Mongoose to talk with databases. Express works great with non-relational databases like Mongodb.
+
+Rails is an MVC framework written in RUby. It runs on top of Webrick.  Rails uses ActiveRecord to talk with databases. Rails works better with relational databases like SQL or postgresql.
 
 ```
 
@@ -119,5 +154,5 @@ Describe the differences between Express and Rails as backend frameworks.
 What is the importance of using body-parser in our express application for post requests?
 
 ```js
-
+Express does not have built in functionality for pulling information from forms. Express is lightweight so a lot of things are pulled from modules. In order to process user input received through a form we need to install and implement the body-parser middleware.
 ```
