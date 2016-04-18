@@ -8,7 +8,7 @@ Describe the differences between a SQL and NoSQL DB, and when you might use each
 
 ```text
 Your answer...
-SQL databases are better when dealing with relational data and are more rigid in the designation of their schemas, they require items to have the same attributes and are laid out in rows and columns similar to a spreadsheet - NoSQL DBs allow for objects, called "documents" to be inserted into the database and these object can have different key value pairs. 
+SQL databases are better when dealing with relational data and are more rigid in the designation of their schemas, they require items to have the same attributes and are laid out in rows and columns similar to a spreadsheet - NoSQL DBs allow for objects, called "documents" to be inserted into the database and these object can have different key value pairs.
 ```
 
 ### Question #2
@@ -23,6 +23,11 @@ console.log(results);
 
 ```js
 // Your answer...
+missing  a callback function ---
+
+var results = AuthorModel.find({name:"Bob"}, function(results){
+  console.log(results)
+})
 ```
 
 ### Question #3
@@ -36,6 +41,10 @@ Convert the following ActiveRecord sequence to Mongoose:
 
 ```js
 // Your answer...
+Instructor.findOne({name: "Andy"},function(some callback?){
+  andy.wishlist_items.push({description: "Resin Laying Deer Figurine, Gold"})
+})
+
 ```
 
 ### Question #4
@@ -56,7 +65,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```
 
 ```rb
-
+ @author = Author.create!(name: params[:name])
 ```
 ## Express
 
@@ -65,7 +74,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 How does module.exports help us with separation of concerns?
 
 ```text
-
+in modular programming code gets separated into modules that are interchangable and contain everything necessary to execute one aspect of functionality.
 ```
 
 ### Question #6
@@ -79,6 +88,21 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
+app.get("/", function(req, res){
+  response.send("INDEX")
+});
+
+app.post("/", function(req, res){
+  response.send("CREATE")
+});
+
+app.put("/:id", function(req, res){
+  response.send("UPDATE")
+});
+
+app.delete("/:id", function(req, res){
+  response.send("DELETE")
+});
 
 ```
 
@@ -90,13 +114,14 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+A LOT more freedom in Express - depending on what you are doing it can be faster - less bulk - dependencies can vary and really it seems that you can put code just about everywhere and it can still do it's job if constructed properly. Rails is very particular, one wrong move and you're out in the cold but it's still pretty great when you need that kind of structure to lean on.
 ```
 
 ### Question #8
 
 What is the importance of using body-parser in our express application for post requests?
 
-```js
+```text
+body-parser is used for translating the input in a form into usable data with which to make a post request. 
 
 ```
