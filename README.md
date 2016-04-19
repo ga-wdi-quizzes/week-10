@@ -23,7 +23,7 @@ console.log(results);
 ```js
 This code is not using a callback function to process the results. Mongoose DB operations (find, save, etc) are all async, which means we need to pass a callback function to handle the results when they come back. Example below:
 
-var results = AuthorModel.find({name: "Bob"}, function(results){
+AuthorModel.find({name: "Bob"}, function(results){
   console.log(results);
 });
 ```
