@@ -21,7 +21,7 @@ var results = AuthorModel.find({name: "Bob"});
 console.log(results);
 ```
 ```text
-The example above had now callback function to perform any action with the results parameter.
+The example above had no callback function to perform any action with the results parameter.
 ```
 ```js
 var results = AuthorModel.find({name: "Bob"}, function(results) {
