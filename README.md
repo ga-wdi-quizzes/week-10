@@ -21,7 +21,7 @@ console.log(results);
 ```
 
 ```js
-"AuthorModel.find" is not a viable method.  To return "results", the method should be written as "AuthorModel.findOne".
+This method is missing its callback function.
 ```
 
 ### Question #3
@@ -34,7 +34,10 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+Instructor.findOne({name: "Andy"}, function(err, res){
+  andy.wishlist_items.create("Resin layer Deer Figurine, Gold");
+  andy.save();
+})
 ```
 
 ### Question #4
@@ -55,7 +58,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```
 
 ```rb
-
+@author = Author.create!(params[:id]);
 ```
 ## Express
 
@@ -64,7 +67,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 How does module.exports help us with separation of concerns?
 
 ```text
-
+Module.exports allows programmers to encapsulate their code into a single unit, keeping functions of a kind together in a separate file.  This keep code DRY and easier to read and concerns well-managed.
 ```
 
 ### Question #6
@@ -91,7 +94,7 @@ app.get("/models/:name", function(err, res){
     });
   });
 
-app.post("/models/:name", function(err, res){
+app.put("/models/:name", function(err, res){
   Model.findOneAndUpdate({name: req.params.name}, req.body.model, {new: true}).then(function(model){
     console.log("Edit");
     });
@@ -116,6 +119,6 @@ Express is written in JavaScript, while Rails is written using the Ruby language
 
 What is the importance of using body-parser in our express application for post requests?
 
-```js
-
+```text
+Body-parser is needed to process user input received through a form.
 ```
