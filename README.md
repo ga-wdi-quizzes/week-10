@@ -13,7 +13,7 @@ NoSQL databases often lack a schema, and allow us to insert any documents (simil
 ### Question #2
 
 What's wrong with this mongoose code and how might we fix it?
-(Hint: Assuming there is a document with a name of "Bob", why is results not an author model on the second line?)
+(Hint: Assuming there is a document with a name of "Bob", why is `results` not an author model on the second line?)
 
 ```js
 var results = AuthorModel.find({name: "Bob"});
@@ -46,7 +46,24 @@ Instructor.findOne({name: "Andy"), function(err, andy){
 
 ### Question #4
 
-```ruby
+Convert the following create method in Mongoose to ActiveRecord.
+
+```js
+var authors = {
+  create: function(req, res){
+    var author = new AuthorModel(
+    	{name: req.body.name}
+    	);
+    author.save(function(err){
+      if (!err){
+        res.redirect("authors");
+      }
+    })
+  }  
+}
+```
+
+>```ruby
 @author = Author.create!(name: params[:name])
 ```
 
@@ -86,12 +103,12 @@ app.delete("/:id", function(request, response){
 
 ### Question #7
 
-```
-Rails is a very structured, opinionated framework written in Ruby.
+Describe the differences between Express and Rails as backend frameworks.
 
-On the other hand, Express is much less opinionated. It' more like Sinatra, and we have a lot of freedom in how we structure our application (folders/files, how to load different files, managing dependancies, etc)
 
-```
+> Rails is a very structured, opinionated framework written in Ruby, designed to support Relational Databases.
+
+> Express, like Sinatra, is much less opinionated. We must explicitly state dependencies and configuration.  In return, we have a lot of freedom in how we structure our application (folders/files, how to load different files, managing dependancies, etc).
 
 ### Question #8
 
