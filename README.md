@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
+A SQL DB like PostgreSQL gives a very concise data structure based on tables that carefully lays out a strict schema. A NoSQL DB like MongoDB allows a lot more flexibility with table schemas. You can pretty much get the initial set-up and implemented rather quickly.
 
 ```
 
@@ -20,9 +20,13 @@ What's wrong with this mongoose code and how might we fix it?
 var results = AuthorModel.find({name: "Bob"});
 console.log(results);
 ```
-
+```text
+The example above had no callback function to perform any action with the results parameter.
+```
 ```js
-// Your answer...
+var results = AuthorModel.find({name: "Bob"}, function(results) {
+  console.log(results);
+});
 ```
 
 ### Question #3
@@ -35,7 +39,10 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+Instructor.findOne({name: "Andy"), function(err, andy){
+  andy.wishlist_items.push({description: "Resin Laying Deer Figurine, Gold");
+  andy.save();
+});
 ```
 
 ### Question #4
@@ -56,7 +63,9 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```
 
 ```rb
-
+def create
+  @author = Author.create!(name: params[:name])
+end
 ```
 ## Express
 
@@ -65,7 +74,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 How does module.exports help us with separation of concerns?
 
 ```text
-
+Module.exports allows us to have a completely separate file including code that we want to use in various different places and import it or "require" when needed in other files.
 ```
 
 ### Question #6
@@ -78,25 +87,33 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/", function(req, res){
+  res.send("INDEX");
+});
+app.post("/", function(req, res){
+  res.send("CREATE");
+});
+app.put("/:id", function(req, res){
+  res.send("UPDATE");
+});
+app.delete("/:id", function(req, res){
+  res.send("DELETE");
+});
 
 ```
 
-```js
-// Your answer...
-```
 ### Question #7
 
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+Express is like a more pure version of Rails, aside from the fact that Rails is written in ruby and not JavaScript. Rails comes with A LOT of out of the box helper methods and capabilities. That being said there is a lot of functionality Rails "does for you" that you don't know about and happens under the hood. Express is pure in the sense that it comes with almost nothing out of the box. You have to explicitly require every feature you want your app to have manually.
 ```
 
 ### Question #8
 
-What is the importance of using body-parser in our express application for post requests? 
+What is the importance of using body-parser in our express application for post requests?
 
-```js
-
+```text
+In order to read data submitted via form from a user, we need a body-parser middleware to process the data.
 ```
