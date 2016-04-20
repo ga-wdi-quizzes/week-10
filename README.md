@@ -8,7 +8,9 @@ Describe the differences between a SQL and NoSQL DB, and when you might use each
 
 ```text
 Your answer...
+All the data in SQL is relational built in a table. You can set unique properties and create a s
 
+All the data in NoSql is non relation and can have data be inserted freely allowing it to be faster than a relation database
 ```
 
 ### Question #2
@@ -21,8 +23,14 @@ var results = AuthorModel.find({name: "Bob"});
 console.log(results);
 ```
 
-```js
-// Your answer...
+```
+There's no callback function
+
+var results = AuthorModel.find({name: "Bob"}, function(results){
+  console.log(results);
+});
+
+
 ```
 
 ### Question #3
@@ -35,7 +43,10 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+Instructor.findOne({name: "Andy"), function(err, andy){
+  andy.wishlist_items.push({description: "Resin Laying Deer Figurine, Gold");
+  andy.save();
+});
 ```
 
 ### Question #4
@@ -56,7 +67,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```
 
 ```rb
-
+  @author = Author.create!(name: params[:name])
 ```
 ## Express
 
@@ -65,6 +76,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 How does module.exports help us with separation of concerns?
 
 ```text
+When separating code into individual modules we import that code into a single file
 
 ```
 
@@ -83,20 +95,33 @@ var app = express();
 ```
 
 ```js
-// Your answer...
+app.get("/", function(req, res){
+  res.render("index")
+});
+app.post("/", function(req, res){
+  res
+});
+app.put("/:id", function(req, res){
+  res
+});
+app.delete("/:id", function(req, res){
+  res
+});
 ```
 ### Question #7
 
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
+Rails uses Gems
 
+express uses dependencies
 ```
 
 ### Question #8
 
-What is the importance of using body-parser in our express application for post requests? 
+What is the importance of using body-parser in our express application for post requests?
 
 ```js
-
+ processes inputs received through a form and makes the post requests
 ```
