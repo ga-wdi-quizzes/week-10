@@ -26,7 +26,9 @@ console.log(results);
 ```
 
 ```text
-find returns a list of documents, not a document. Even if there's only one bob, it will return a one item list containinb bob the document, (If this was my family, it would return my brother-in-law Bob, my Uncle Bob on Mom's side, his son Bob, my Uncle Bob on Dad's side, and maybe his son Rob and the Bob I dated a little.)
+find returns a list of documents, not a document. Even if there's only one bob, it will return a one item list 
+containing bob the document, (If this was my family, it would return my brother-in-law Bob, my Uncle Bob on 
+Mom's side, his son Bob, my Uncle Bob on Dad's side, and maybe his son Rob and the Bob I dated a little.)
 ```
 
 ```js
@@ -106,6 +108,6 @@ Describe the differences between Express and Rails as backend frameworks.
 
 What is the importance of using body-parser in our express application for post requests? 
 
-```js
-
+```text
+It's what allows us to parse the user inputs -- from a form, for instance.
 ```
