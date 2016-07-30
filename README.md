@@ -76,7 +76,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 How does module.exports help us with separation of concerns?
 
 ```text
-
+module.exports allows exporting code from one file to another. This allows files to focus on a given concern. 
 ```
 
 ### Question #6
