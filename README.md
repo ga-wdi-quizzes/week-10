@@ -25,8 +25,13 @@ var results = AuthorModel.find({name: "Bob"});
 console.log(results);
 ```
 
+```text
+find returns a list of documents, not a document. Even if there's only one bob, it will return a one item list containinb bob the document, (If this was my family, it would return my brother-in-law Bob, my Uncle Bob on Mom's side, his son Bob, my Uncle Bob on Dad's side, and maybe his son Rob and the Bob I dated a little.)
+```
+
 ```js
-// Your answer...
+var results = AuthorModel.findOne({name: "Bob"});
+console.log(results);
 ```
 
 ### Question #3
