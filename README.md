@@ -7,8 +7,12 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
+As SQL DB is relational, with explicit one-to-one, one-to-many and many-to-many relationships. 
+A NoSQL DB is non-relational, meaning it does not _necessarily_ have such relationshps. 
 
+A NoSQL database works well with non-uniform data. It's alos faster with smaller data sets. 
+
+Larger data sets will need SQL.
 ```
 
 ### Question #2
@@ -35,7 +39,7 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+
 ```
 
 ### Question #4
