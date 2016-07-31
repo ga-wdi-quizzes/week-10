@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
+SQL databases are relational. You need to define a schema before you can add data. NoSQL databases don't have a schema and you can add documents whenever you want.
 
 ```
 
@@ -22,7 +22,9 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+var results = AuthorModel.find({name: "Bob"}, function(results){
+  console.log(results);
+});
 ```
 
 ### Question #3
@@ -35,7 +37,14 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+Instructor.findOne({name: "Andy"}, function(err, andy){
+  if (err){
+    console.log(err)
+  } else {
+    andy.wishlist_items.push({description: "Resin Laying Deer Figurine, Gold"})
+    andy.save();
+  }
+});
 ```
 
 ### Question #4
@@ -56,7 +65,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```
 
 ```rb
-
+@author = Author.create(name: params[:name])
 ```
 ## Express
 
@@ -65,7 +74,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 How does module.exports help us with separation of concerns?
 
 ```text
-
+It sets up each module as a separate entity and you can reference them throughout your application.
 ```
 
 ### Question #6
@@ -83,20 +92,32 @@ var app = express();
 ```
 
 ```js
-// Your answer...
+app.get("/", function(req, res){
+  res.render("index")
+});
+app.post("/", function(req, res){
+  res.send("create")
+});
+app.put("/:id", function(req, res){
+  res.send("update")
+});
+app.delete("/:id", function (req, res){
+  res.send("delete")
+});
+
 ```
 ### Question #7
 
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+Rails is more structured and you have to do things a certain way. With express you have more freedom in how you setup the backend.
 ```
 
 ### Question #8
 
-What is the importance of using body-parser in our express application for post requests? 
+What is the importance of using body-parser in our express application for post requests?
 
 ```js
-
+Body-parser is what enables express to read forms and use user inputs.
 ```
