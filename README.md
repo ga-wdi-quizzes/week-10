@@ -7,8 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-
-
+SQL uses tables to store the data in very strict fashion while NoSQL does not have the same strictness and allows us to add varying types of data. I think.
 ```
 
 ### Question #2
@@ -22,7 +21,11 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+Its missing the callback function so just need to add one.
+
+var results = AuthorModel.find({name: "Bob"}, function(results){
+  console.log(results);
+});
 ```
 
 ### Question #3
