@@ -67,7 +67,8 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```
 
 ```rb
-
+author = Author.create(:name => body.name)
+redirect_to authors
 ```
 ## Express
 
