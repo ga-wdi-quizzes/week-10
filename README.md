@@ -102,7 +102,11 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
+Obviously, Express is JavaScript-based, while Rails is Ruby-based. 
 
+Beyond that, Ruby requires more sticking to a standard structure, but in return, it gives you things 
+like capitalization and pluralization being significant. This may not be seen as a Good Thing, depending
+on the developer. 
 ```
 
 ### Question #8
