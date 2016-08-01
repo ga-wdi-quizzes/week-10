@@ -68,8 +68,11 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```rb
 def create
   @author = Author.new(params[:id])
-  @author.create
-
+  if @author.create
+    redirect_to :action => :show
+  else
+    render @author
+  end
 end
 
 ```
@@ -80,6 +83,11 @@ end
 How does module.exports help us with separation of concerns?
 
 ```text
+
+Because it allows you to set up each module as a separate entity for the purpose
+of accessing code from another file and use it in as many places
+as needed throughout the application.
+
 
 ```
 
@@ -93,7 +101,18 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/", function(req, res){
+  res.render("index")
+});
+app.post("/", function(req, res){
+  res.send("create")
+});
+app.put("/:id", function(req, res){
+  res.send("update")
+});
+app.delete("/:id", function (req, res){
+  res.send("delete")
+});
 
 ```
 
@@ -105,6 +124,9 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
+If you desire more structure, Rails has conventions that if followed, makes for
+a relatively smooth programming experience. Express, however, allows more freedom
+in how to implement the backend.
 
 ```
 
@@ -113,5 +135,8 @@ Describe the differences between Express and Rails as backend frameworks.
 What is the importance of using body-parser in our express application for post requests?
 
 ```js
+
+Body-parser enables the application to parse form data and make user input
+data useable.
 
 ```
