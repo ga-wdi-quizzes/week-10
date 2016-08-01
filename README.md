@@ -8,6 +8,9 @@ Describe the differences between a SQL and NoSQL DB, and when you might use each
 
 ```text
 Your answer...
+the structure is different.
+SQL uses tables, rows, and columns - optimal for data that is relational because you can use foreign keys etc
+no SQL is everything else - this type of DB doesn't often have as much structure (or schema). ex: mongoDB which uses collections and documents.
 
 ```
 
@@ -23,6 +26,8 @@ console.log(results);
 
 ```js
 // Your answer...
+mongo is asynchronous, so you need a callback function to console.log the results. so if you just
+put the console.log(results) in a callback function then it should be ok
 ```
 
 ### Question #3
@@ -36,6 +41,9 @@ Convert the following ActiveRecord sequence to Mongoose:
 
 ```js
 // Your answer...
+InstructorModel.findOne({name: "Andy"}, function(andy){
+  andy.wishlist_items.push({description: "Resin Laying Deer Figurine, Gold"})
+})
 ```
 
 ### Question #4
@@ -56,7 +64,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```
 
 ```rb
-
+@author = Author.create(name: params[:name])
 ```
 ## Express
 
@@ -65,7 +73,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 How does module.exports help us with separation of concerns?
 
 ```text
-
+we can separate our files (like schema and seed files), and export modules so that we can use smaller bits of code like functions or models throughout the project.
 ```
 
 ### Question #6
@@ -79,6 +87,13 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
+app.get("/", function(req, res){
+  response.send("Index")
+})
+
+app.post("/:id", function(req, res){
+  response.send("create")
+})
 
 ```
 
@@ -90,13 +105,14 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+ruby is very structured and specific - it tells you how to do things and its better to follow their rules.
+express gives you more freedom to structure your files as you want - there are less rules
 ```
 
 ### Question #8
 
-What is the importance of using body-parser in our express application for post requests? 
+What is the importance of using body-parser in our express application for post requests?
 
 ```js
-
+we need body-parser to obtain user input from forms 
 ```
