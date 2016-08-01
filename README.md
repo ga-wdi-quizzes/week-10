@@ -7,8 +7,12 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
+As SQL DB is relational, with explicit one-to-one, one-to-many and many-to-many relationships. 
+A NoSQL DB is non-relational, meaning it does not _necessarily_ have such relationshps. 
 
+A NoSQL database works well with non-uniform data. It's alos faster with smaller data sets. 
+
+Larger data sets will need SQL.
 ```
 
 ### Question #2
@@ -21,8 +25,15 @@ var results = AuthorModel.find({name: "Bob"});
 console.log(results);
 ```
 
+```text
+find returns a list of documents, not a document. Even if there's only one bob, it will return a one item list 
+containing bob the document, (If this was my family, it would return my brother-in-law Bob, my Uncle Bob on 
+Mom's side, his son Bob, my Uncle Bob on Dad's side, and maybe his son Rob and the Bob I dated a little.)
+```
+
 ```js
-// Your answer...
+var results = AuthorModel.findOne({name: "Bob"});
+console.log(results);
 ```
 
 ### Question #3
@@ -35,7 +46,10 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+Instructor.findOne({name: "Andy"}, function(andy){
+  andy.wishlist_items.push({description: "Resin Laying Deer Figurine, Gold"});
+  andy.save();
+ });
 ```
 
 ### Question #4
@@ -56,7 +70,8 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```
 
 ```rb
-
+author = Author.create(:name => body.name)
+redirect_to authors
 ```
 ## Express
 
@@ -65,7 +80,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 How does module.exports help us with separation of concerns?
 
 ```text
-
+module.exports allows exporting code from one file to another. This allows files to focus on a given concern. 
 ```
 
 ### Question #6
@@ -78,7 +93,15 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/books", function(req, res){
+  res.send("index");
+});
+app.post("/book", function(req, res){
+  res.send("create");
+});
+app.delete("/:bookid", function(req, res){
+  res.send("delete");
+});
 
 ```
 
@@ -90,13 +113,17 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
+Obviously, Express is JavaScript-based, while Rails is Ruby-based. 
 
+Beyond that, Ruby requires more sticking to a standard structure, but in return, it gives you things 
+like capitalization and pluralization being significant. This may not be seen as a Good Thing, depending
+on the developer. 
 ```
 
 ### Question #8
 
 What is the importance of using body-parser in our express application for post requests? 
 
-```js
-
+```text
+It's what allows us to parse the user inputs -- from a form, for instance.
 ```
