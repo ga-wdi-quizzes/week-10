@@ -7,7 +7,9 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
+SQL is a relational database and NoSQL is a non-relational database.
+
+NoSQL allows the use of different datatypes within a given document, so taking on a project where the types of data are unknown may be ideal for NoSQL.
 
 ```
 
@@ -22,8 +24,8 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
-```
+var results = Author.findOne({name: "Bob"});
+console.log(results);
 
 ### Question #3
 
@@ -35,7 +37,15 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+var query = Instructor.findOneAndUpdate({name: "Andy"},
+{
+  $set: {
+    "wishlist_items" : {"description":[Resin Laying Deer Figurine, Gold]}
+  }
+},{
+  upsert:true
+});
+
 ```
 
 ### Question #4
@@ -56,6 +66,11 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```
 
 ```rb
+def create
+  @author = Author.new(params[:id])
+  @author.create
+
+end
 
 ```
 ## Express
@@ -95,7 +110,7 @@ Describe the differences between Express and Rails as backend frameworks.
 
 ### Question #8
 
-What is the importance of using body-parser in our express application for post requests? 
+What is the importance of using body-parser in our express application for post requests?
 
 ```js
 
