@@ -7,7 +7,9 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
+SQL is a relationship database, while noSQL has no relationships and therefore does not need to have rigid schemas.
+
+NoSQL is easier to work with in the sense of less code and effort to update than SQL for smaller datasets. Large datasets need to be broken up or it's too much data that needs to be referenced at the same time.
 
 ```
 
@@ -22,7 +24,7 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+The console.log would return the full "result", in this case the hash. To return the author "Bob", use results.name
 ```
 
 ### Question #3
@@ -36,6 +38,9 @@ Convert the following ActiveRecord sequence to Mongoose:
 
 ```js
 // Your answer...
+
+
+
 ```
 
 ### Question #4
@@ -56,6 +61,11 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```
 
 ```rb
+def create
+  @author = AuthorModel.find(params)
+
+end
+
 
 ```
 ## Express
@@ -65,6 +75,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 How does module.exports help us with separation of concerns?
 
 ```text
+Keeps seed data and building of model data in a separate file from the find and display of information.
 
 ```
 
@@ -90,13 +101,15 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
+Rails is a convention over configuration/customization. Rails requires less code/time to set up... if you're okay with Rails opinions on how to set up models, transfer data, etc. Express doesn't have built-in opinions , which makes it a more customizable backend setup.
 
 ```
 
 ### Question #8
 
-What is the importance of using body-parser in our express application for post requests? 
+What is the importance of using body-parser in our express application for post requests?
 
 ```js
+body-parser allows splitting of info JSON info.
 
 ```
