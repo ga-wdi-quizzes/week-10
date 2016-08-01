@@ -7,7 +7,9 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
+SQL is a relational database and NoSQL is a non-relational database.
+
+NoSQL allows the use of different datatypes within a given document, so taking on a project where the types of data are unknown may be ideal for NoSQL.
 
 ```
 
@@ -22,8 +24,8 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
-```
+var results = Author.findOne({name: "Bob"});
+console.log(results);
 
 ### Question #3
 
@@ -35,7 +37,15 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+var query = Instructor.findOneAndUpdate({name: "Andy"},
+{
+  $set: {
+    "wishlist_items" : {"description":[Resin Laying Deer Figurine, Gold]}
+  }
+},{
+  upsert:true
+});
+
 ```
 
 ### Question #4
@@ -56,6 +66,14 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```
 
 ```rb
+def create
+  @author = Author.new(params[:id])
+  if @author.create
+    redirect_to :action => :show
+  else
+    render @author
+  end
+end
 
 ```
 ## Express
@@ -65,6 +83,11 @@ Convert the following create method in Mongoose to ActiveRecord.
 How does module.exports help us with separation of concerns?
 
 ```text
+
+Because it allows you to set up each module as a separate entity for the purpose
+of accessing code from another file and use it in as many places
+as needed throughout the application.
+
 
 ```
 
@@ -78,7 +101,18 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/", function(req, res){
+  res.render("index")
+});
+app.post("/", function(req, res){
+  res.send("create")
+});
+app.put("/:id", function(req, res){
+  res.send("update")
+});
+app.delete("/:id", function (req, res){
+  res.send("delete")
+});
 
 ```
 
@@ -90,13 +124,19 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
+If you desire more structure, Rails has conventions that if followed, makes for
+a relatively smooth programming experience. Express, however, allows more freedom
+in how to implement the backend.
 
 ```
 
 ### Question #8
 
-What is the importance of using body-parser in our express application for post requests? 
+What is the importance of using body-parser in our express application for post requests?
 
 ```js
+
+Body-parser enables the application to parse form data and make user input
+data useable.
 
 ```
