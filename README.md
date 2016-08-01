@@ -46,7 +46,10 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-
+Instructor.findOne({name: "Andy"}, function(andy){
+  andy.wishlist_items.push({description: "Resin Laying Deer Figurine, Gold"});
+  andy.save();
+ });
 ```
 
 ### Question #4
