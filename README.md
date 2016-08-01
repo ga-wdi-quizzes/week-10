@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
+SQL databases are relational, while NoSQL databases are not. You might use NoSQL for user friendliness, while you might use SQL if each table needs to be large.
 
 ```
 
@@ -22,7 +22,7 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+Because you are using find instead of findOne, the results will be an array of objects.
 ```
 
 ### Question #3
@@ -35,7 +35,8 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+I would use an Angular factory with this in Express:
+Instructor.findOneAndUpdate({name: req.params.name}, req.body.instructor, {new: true})
 ```
 
 ### Question #4
@@ -56,7 +57,9 @@ Convert the following create method in Mongoose to ActiveRecord.
 ```
 
 ```rb
-
+@author = Author.new(author_params)
+@author = Author.create!(author_params)
+redirect_to author_url(@author)
 ```
 ## Express
 
@@ -65,7 +68,7 @@ Convert the following create method in Mongoose to ActiveRecord.
 How does module.exports help us with separation of concerns?
 
 ```text
-
+It lets you control what data is shared between files.
 ```
 
 ### Question #6
@@ -78,7 +81,35 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+// index
+app.get("/api/doctors", function(req, res){
+  Doctor.find({}).then(function(doctors){
+    res.json(doctors)
+  });
+});
+
+// show
+app.get("/api/doctors/:name", function(req, res){
+  Doctor.findOne({name: req.params.name}).then(function(doctor){
+    res.json(doctor)
+  });
+});
+
+
+// delete
+app.delete("/api/doctors/:name", function(req, res){
+  Doctor.findOneAndRemove({name: req.params.name}).then(function(){
+    res.json({ success: true })
+  });
+});
+
+
+// update
+app.put("/api/doctors/:name", function(req, res){
+  Doctor.findOneAndUpdate({name: req.params.name}, req.body.doctor, {new: true}).then(function(doctor){
+    res.json(doctor)
+  });
+});
 
 ```
 
@@ -90,13 +121,13 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+Rails is all about conventions; Express is more open-ended. Ruby vs JS.
 ```
 
 ### Question #8
 
-What is the importance of using body-parser in our express application for post requests? 
+What is the importance of using body-parser in our express application for post requests?
 
 ```js
-
+It lets you use information contained in HTML forms.
 ```
